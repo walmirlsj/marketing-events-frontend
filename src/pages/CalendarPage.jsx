@@ -20,7 +20,10 @@ export default function CalendarPage() {
     staleTime: 60_000,
   });
 
-  const events = (data || []).filter(e => e.event_date);
+  const events = (data || []).filter(e => e.event_date).map(e => ({
+  ...e,
+  event_date: e.event_date.split('T')[0],
+}));
   const days = eachDayOfInterval({ start: startOfMonth(current), end: endOfMonth(current) });
   const startDay = (getDay(startOfMonth(current)) + 6) % 7;
   const paddingDays = Array(startDay).fill(null);
