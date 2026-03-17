@@ -34,7 +34,10 @@ export default function Layout() {
     { to: '/events', icon: List, label: 'Eventos' },
     { to: '/calendar', icon: Calendar, label: 'Calendário' },
     { to: '/events/new', icon: Plus, label: 'Novo Evento' },
-    ...(isAdmin() ? [{ to: '/admin', icon: Shield, label: 'Admin' }] : []),
+    ...(isAdmin() ? [
+  { to: '/admin', icon: Shield, label: 'Admin' },
+  { to: '/regions', icon: Globe, label: 'Regiões' },
+] : []),
   ];
 
   return (
