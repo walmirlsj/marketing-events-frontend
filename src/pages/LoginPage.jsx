@@ -57,9 +57,9 @@ export default function LoginPage() {
         <p style={{ textAlign: 'center', marginTop: 20, fontSize: 13, color: '#888' }}>
           Não tem conta? <Link to="/register" style={{ color: '#185FA5', textDecoration: 'none' }}>Cadastre-se</Link>
         </p>
-        <div style={{ marginTop: 16, padding: '10px 12px', background: '#f5f5f5', borderRadius: 8, fontSize: 12, color: '#888' }}>
+        {/*<div style={{ marginTop: 16, padding: '10px 12px', background: '#f5f5f5', borderRadius: 8, fontSize: 12, color: '#888' }}>
           <strong>Admin:</strong> admin@marketingevents.com / admin123
-        </div>
+        </div>*/}
       </div>
     </div>
   );
