@@ -12,6 +12,7 @@ import EventDetailPage from './pages/EventDetailPage';
 import NewEventPage from './pages/NewEventPage';
 import AdminPage from './pages/AdminPage';
 import CalendarPage from './pages/CalendarPage';
+import RegionsPage from './pages/RegionsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 1, staleTime: 30_000 } },
@@ -42,12 +43,17 @@ export default function App() {
             <Route path="events/:id" element={<EventDetailPage />} />
             <Route path="calendar" element={<CalendarPage />} />
             <Route path="admin" element={
+            <ProtectedRoute adminOnly>
+            <AdminPage />
+            </ProtectedRoute>
+            } />
+           <Route path="regions" element={
               <ProtectedRoute adminOnly>
-                <AdminPage />
+                <RegionsPage />
               </ProtectedRoute>
             } />
           </Route>
-        </Routes>
+      </Routes>
       </BrowserRouter>
     </QueryClientProvider>
   );
