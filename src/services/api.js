@@ -31,6 +31,8 @@ export const eventsApi = {
   list: (params) => api.get('/events', { params }),
   get: (id) => api.get(`/events/${id}`),
   create: (data) => api.post('/events', data),
+  update: (id, data) => api.put(`/events/${id}`, data),
+  remove: (id) => api.delete(`/events/${id}`),
   review: (id, action, rejection_reason) =>
     api.patch(`/events/${id}/review`, { action, rejection_reason }),
   import: (file) => {
